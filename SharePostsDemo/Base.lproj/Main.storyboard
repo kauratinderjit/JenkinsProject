@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,65 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SharePostsDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-kQ-ONC">
+                                <rect key="frame" x="72" y="116" width="270" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9w0-Pr-4sD"/>
+                                </constraints>
+                                <state key="normal" title="Automatic"/>
+                                <connections>
+                                    <action selector="shareDialogModeAutomatic:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r9s-Pd-2u2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PZg-oM-CWW">
+                                <rect key="frame" x="72" y="285" width="270" height="50"/>
+                                <state key="normal" title="Phpoto"/>
+                                <connections>
+                                    <action selector="showShareDialogPhotoContent" destination="BYZ-38-t0r" eventType="touchUpInside" id="utK-fc-3C1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihk-u5-Eqc">
+                                <rect key="frame" x="72" y="203" width="270" height="50"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Web">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="ShareDialogMode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="52P-px-Dp3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PZg-oM-CWW" firstAttribute="height" secondItem="ihk-u5-Eqc" secondAttribute="height" id="0Um-v6-7Me"/>
+                            <constraint firstItem="ihk-u5-Eqc" firstAttribute="trailing" secondItem="gh3-kQ-ONC" secondAttribute="trailing" id="0fU-sZ-GM7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gh3-kQ-ONC" secondAttribute="trailing" constant="72" id="JZd-tb-nyu"/>
+                            <constraint firstItem="ihk-u5-Eqc" firstAttribute="leading" secondItem="gh3-kQ-ONC" secondAttribute="leading" id="cNy-E7-LWf"/>
+                            <constraint firstItem="PZg-oM-CWW" firstAttribute="top" secondItem="ihk-u5-Eqc" secondAttribute="bottom" constant="32" id="fgH-5E-KGy"/>
+                            <constraint firstItem="PZg-oM-CWW" firstAttribute="leading" secondItem="ihk-u5-Eqc" secondAttribute="leading" id="igy-RQ-3Ed"/>
+                            <constraint firstItem="gh3-kQ-ONC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="o0G-WH-jHI"/>
+                            <constraint firstItem="gh3-kQ-ONC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="72" id="o2h-xv-d84"/>
+                            <constraint firstItem="PZg-oM-CWW" firstAttribute="trailing" secondItem="ihk-u5-Eqc" secondAttribute="trailing" id="qYC-g9-D7u"/>
+                            <constraint firstItem="ihk-u5-Eqc" firstAttribute="top" secondItem="gh3-kQ-ONC" secondAttribute="bottom" constant="37" id="tXV-6F-Hon"/>
+                            <constraint firstItem="ihk-u5-Eqc" firstAttribute="height" secondItem="gh3-kQ-ONC" secondAttribute="height" id="wQe-Dn-TpP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="75.669642857142847"/>
         </scene>
     </scenes>
 </document>
